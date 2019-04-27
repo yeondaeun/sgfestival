@@ -6,7 +6,7 @@ from .models import Booth, Photo, HitCount
 def booth_list(request):
     booths = Booth.objects.all
     
-    return render(request, 'booth.html', {'booths': booths})
+    return render(request, 'booth/booth.html', {'booths': booths})
 
 
 def booth_detail(request, index):
@@ -25,7 +25,7 @@ def booth_detail(request, index):
         # 처음 게시글을 조회한 경우엔 조회 기록이 없음
         print(e)
         
-    return render(request, 'booth_detail.html', {'booth':booth , 'photos': photos })
+    return render(request, 'booth/booth_detail.html', {'booth':booth , 'photos': photos })
 
 
 # Create your views here.
