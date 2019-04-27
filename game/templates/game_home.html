@@ -1,0 +1,14 @@
+<h1>서강퀴즈</h1>
+
+<form method="POST" class="post-form">{%csrf_token%}
+    당신의 이름/별명을 알려주세요! <input type="text" id="name" name="name" required/> <br>
+    {% for question in questions_list %}
+        <b>{{question.question}}</b><br>
+        <input type="radio" id="c1" name="answer_{{ forloop.counter }}" value="1" required/>{{question.c1}}<br>
+        <input type="radio" id="c2" name="answer_{{ forloop.counter }}" value="2"/>{{question.c2}}<br>
+        <input type="radio" id="c3" name="answer_{{ forloop.counter }}" value="3"/>{{question.c3}}<br>
+        <input type="radio" id="c4" name="answer_{{ forloop.counter }}" value="4"/>{{question.c4}}<br>
+        <br>
+    {% endfor %}
+    <button type="submit">Save</button>
+</form>
