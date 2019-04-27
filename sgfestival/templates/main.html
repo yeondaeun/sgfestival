@@ -3,12 +3,16 @@
 <head>
 	<style>
 		.one-page {
-			height: 100%;
-            width: 100%;
+			height: 100vh;
+            width: 100vw;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: initial;
 			background-color: #b0c9f1;
 		}
         .two-page {
-            height: 100%;
+            height: 100vh;
+            width: 100vw;
             position: absolute;
             background-color: #d3d3d3;
         }
@@ -52,9 +56,8 @@
             margin: 0;
             padding-top: 20%;
         }
-        .singer1, .singer2, .singer3 {
-            width: 90%;
-            position: relative;
+        #singer1, #singer2, #singer3 {
+            width: 100%;
         }
 	</style>
 
@@ -76,10 +79,16 @@
 	</div>
 	</section>
     <section class="two-page">
-        <h1 style="font-size: 100px; margin: 0; padding-top: 10%; padding-left: 5%;">공연 라인업</h1>
+        <h1 style="font-size: 100px; margin: 0; padding-top: 10%; padding-left: 5%;a">공연 라인업</h1>
+        <div style="width: 100%;">
         <img id="singer1" src="{% static '/image/dynamicduo.png' %}">
+        </div>
+        <div>
         <img id="singer2" src="{% static '/image/idle.png' %}">
+        </div>
+        <div>
         <img id="singer3" src="{% static '/image/next.png' %}">
+        </div>
     </section>
 </body>
 </html>
