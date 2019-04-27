@@ -1,0 +1,9 @@
+
+
+
+이름: {{ booth.name }}<br>
+장소: {{ booth.place }}<br>
+내용: {{ booth.content }}<br>
+{% for photo in photos %}
+    <img src="{{ photo.image.url}}">
+{% endfor %}
