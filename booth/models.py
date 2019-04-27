@@ -8,6 +8,7 @@ class Booth(models.Model):
     name = models.CharField(max_length=200)
     place = models.CharField(max_length=200)
     content = models.TextField()
+    check = models.IntegerField()
 
     
     
