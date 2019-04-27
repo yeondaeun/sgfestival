@@ -4,10 +4,12 @@
 	<style>
 		.one-page {
 			height: 100%;
+            width: 100%;
 			background-color: #b0c9f1;
 		}
         .two-page {
             height: 100%;
+            position: absolute;
             background-color: #d3d3d3;
         }
 		#title, #note, #menu {
@@ -51,8 +53,8 @@
             padding-top: 20%;
         }
         .singer1, .singer2, .singer3 {
-            width: 95%;
-            margin-right: 5%;
+            width: 90%;
+            position: relative;
         }
 	</style>
 
@@ -74,10 +76,10 @@
 	</div>
 	</section>
     <section class="two-page">
-        <h1 style="font-size: 100px;">공연 라인업<h1>
+        <h1 style="font-size: 100px; margin: 0; padding-top: 10%; padding-left: 5%;">공연 라인업</h1>
         <img id="singer1" src="{% static '/image/dynamicduo.png' %}">
         <img id="singer2" src="{% static '/image/idle.png' %}">
-        <img id="singer3" src="{% static '/image/whosnext.png' %}">
+        <img id="singer3" src="{% static '/image/next.png' %}">
     </section>
 </body>
 </html>
