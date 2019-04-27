@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'foodtruck',
+    'timetable',
+    'sgfestival',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

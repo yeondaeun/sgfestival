@@ -6,7 +6,6 @@ import random
 # Create your views here.
 def index(request):
     trucks = Foodtruck.objects.all
-
     return render(request, 'foodtruck/index.html', {'trucks_list':trucks})
 
 def detail(request, index):
