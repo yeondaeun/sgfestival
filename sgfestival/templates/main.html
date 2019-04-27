@@ -1,3 +1,4 @@
+{% load static %}
 <html>
 <head>
 	<style>
@@ -8,6 +9,15 @@
 		#title, #note, #menu {
 			width: 100%;
 		}
+        #title {
+            height: 35vh;
+        }
+        #note {
+            height: 25vh;
+        }
+        #menu {
+            height: 40vh;
+        }
 		.icon1, .icon2, .icon3, .icon4 {
 			position: absolute;
 		}
@@ -20,13 +30,13 @@
 <body>
 	<section class="one-page">
 	<div class="title">
-		<img id="title" src="..\서강여행.png">
+		<img id="title" src="{% static '/image/서강여행.png' %}">
 	</div>
 	<div class="note">
-		<img id="note" src="..\수첩.png">
+		<img id="note" src="{% static '/image/수첩.png' %}">
 	</div>
 	<div class="menu">
-		<img id="menu" src="..\globe.png">
+		<img id="menu" src="{% static '/image/globe.png' %}">
 		<a class="icon1" href="/플리/마당"></a>
 		<a class="icon2" href="/푸드트럭"></a>
 		<a class="icon3" href="타임테이블"></a>
