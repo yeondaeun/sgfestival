@@ -1,0 +1,20 @@
+마당사업 목록
+
+{% for booth in booths %}
+
+    <a href= "{% url 'booth_detail' index=booth.pk %}">{{ booth.name }}</a>
+    {{booth.hitcount_set.count}}<br>
+
+{% endfor %}
+
+
+
+
+플리마켓 목록
+
+{% for booth in booths %}
+
+    <a href= "{% url 'booth_detail' index=booth.pk %}">{{ booth.name }}</a>
+    {{booth.hitcount_set.count}}<br>
+
+{% endfor %}
