@@ -6,6 +6,10 @@
 			height: 100%;
 			background-color: #b0c9f1;
 		}
+        .two-page {
+            height: 100%;
+            background-color: #d3d3d3;
+        }
 		#title, #note, #menu {
 			width: 100%;
 		}
@@ -46,6 +50,10 @@
             margin: 0;
             padding-top: 20%;
         }
+        .singer1, .singer2, .singer3 {
+            width: 95%;
+            margin-right: 5%;
+        }
 	</style>
 
 </head>
@@ -65,5 +73,11 @@
 		<a class="icon4" href="게임"></a>
 	</div>
 	</section>
+    <section class="two-page">
+        <h1 style="font-size: 100px;">공연 라인업<h1>
+        <img id="singer1" src="{% static '/image/dynamicduo.png' %}">
+        <img id="singer2" src="{% static '/image/idle.png' %}">
+        <img id="singer3" src="{% static '/image/whosnext.png' %}">
+    </section>
 </body>
 </html>
