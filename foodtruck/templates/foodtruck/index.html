@@ -14,7 +14,7 @@
                 <div class='top_title'>
                     <a href= "{% url 'detail' index=truck.pk %}">{{ truck.truckname }}</a>
                 </div>
-                <div class='counter'>리뷰 수 : {{truck.comment_set.count}}</div>
+                <div class='counter'>리뷰:{{truck.comment_set.count}}개</div>
             </div>
             <div class='bottom'>#존맛탱구리 #모델 추가해주세요</div>
         </div>
@@ -26,17 +26,37 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">{{booth.name }}</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{truck.id}}.{{truck.truckname}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    이름: {{ truck.truckname }}<br>
+                    {%if truck.truckphoto %}
+                    <img src='{{ truck.truckphoto.url }}' style='width:90%; display:block; margin:0 auto;'><br>
+                    {%endif%}
                     장소: {{ truck.truckplace }}<br>
-                    사진: {{ truck.truckphoto }}<br>
                     내용: {{ truck.truckinfo }}<br>
                     일시: {{truck.truckdate}} : {{truck.trucktime}}<br>
+
+                    <h5>메뉴</h5>
+                    {% for menu in menus %}
+                        <p>{{menu.menuname}} | {{menu.menuprice}}</p><br>
+                    {% endfor %}
+
+                    <h5>댓글</h5>
+                    {% for comment in comments %}
+                        <p>{{comment.writer}} : {{comment.content}}</p><br>
+                    {% endfor %}
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label>댓글:</label><input type="text" name="content">
+                        <input type="submit" value="저장"/>
+                    </form>
+
+
+
 
                 </div>
                 <div class="modal-footer">
