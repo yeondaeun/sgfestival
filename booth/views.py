@@ -4,12 +4,14 @@ from .models import Booth, Photo, HitCount
 
 
 def booth_list(request):
-    booths = Booth.objects.all
-    return render(request, 'booth/booth.html', {'booths': booths})
+    booths = Booth.objects.filter(check=1)
+    flees = Booth.objects.filter(check=2)
+    # flees = Flee.objects.all
+    return render(request, 'booth/booth.html', {'booths': booths, 'flees': flees})
 
 
 def booth_detail(request, index):
-    booth = get_object_or_404(Booth, pk=index)
+    booth = get_object_or_404(Booth, pk=index)  #booth꺼랑 flee쪽 다 포함임
     photos = Photo.objects.filter(booth=booth)
 
     try:
