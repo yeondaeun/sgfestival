@@ -3,7 +3,7 @@ from .models import Question, Answer
 # Create your views here.
 
 def game_start(request):
-    return render(request, "game_start.html")
+    return render(request, "game/game_start.html")
 
 
 def answer_new(request):
@@ -46,7 +46,7 @@ def answer_new(request):
 
         return redirect("game_result", pk=answer.id)
     elif request.method=='GET':
-        return render(request, "game_home.html",{"questions_list":questions})
+        return render(request, "game/game_home.html",{"questions_list":questions})
 
 
         
@@ -60,4 +60,4 @@ def answer_result(request, pk):
     for answer in Answer.objects.all():
         rangelist[answer.total][1]+=1
     rangelist = reversed(rangelist)
-    return render(request, "game_result.html", {'totalpoint':total, 'result':rangelist, 'name':name})
+    return render(request, "game/game_result.html", {'totalpoint':total, 'result':rangelist, 'name':name})

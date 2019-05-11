@@ -1,3 +1,5 @@
+{%extends 'booth/application.html'%}
+{%block content%}
 <h1>푸드트럭</h1>
 <h3>이용시간 8am-10pm</h3>
 <img src="#" alt="푸드트럭맵">
@@ -6,3 +8,6 @@
     <h3><a href="{% url 'detail' index=truck.pk %}">{{ truck.truckname }}</a></h3>
     <p>댓글수 : {{ truck.comment_set.count }}</p>
 {% endfor %}
+
+
+{%endblock%}

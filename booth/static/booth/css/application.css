@@ -1,0 +1,20 @@
+*{
+    font-family: 'BBTreeGL';
+}
+.logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.j_navbar{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.sections{
+    width: 20%;
+    height: 72px;
+    text-align:center;
+}
