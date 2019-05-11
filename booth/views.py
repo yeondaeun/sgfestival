@@ -5,7 +5,6 @@ from .models import Booth, Photo, HitCount
 
 def booth_list(request):
     booths = Booth.objects.all
-    
     return render(request, 'booth/booth.html', {'booths': booths})
 
 
