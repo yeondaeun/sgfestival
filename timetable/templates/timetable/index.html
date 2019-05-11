@@ -1,1 +1,38 @@
-<h1>여기가 타임테이블임둥</h1>
+{% load static %}
+<html>
+<head>
+<style>
+        @font-face { font-family: 'BBTreeGL'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGL.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        .lineup {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            background-color: #d3d3d3;
+        }
+
+        #singer1, #singer2, #singer3 {
+            width: 100%;
+        }
+        .body {
+            font-family: 'BBTreeGL';
+            margin: 0;
+        }
+
+</style>
+<body>
+<section class="lineup">
+<h1 style="font-family: 'BBTreeGL'; font-size: 100px; margin: 0; padding-top: 10%; padding-left: 5%;a">공연 일정</h1>
+    <div style="width: 100%;">
+        <img id="singer1" src="{% static '/image/dynamicduo.png' %}">
+    </div>
+    <div>
+        <img id="singer2" src="{% static '/image/idle.png' %}">
+    </div>
+    <div>
+        <img id="singer3" src="{% static '/image/next.png' %}">
+    </div>
+</section>
+
+<body>
+</html>

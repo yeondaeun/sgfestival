@@ -2,6 +2,7 @@
 <html>
 <head>
 	<style>
+        @font-face { font-family: 'BBTreeGL'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGL.woff') format('woff'); font-weight: normal; font-style: normal; }
 		.one-page {
 			height: 100vh;
             width: 100vw;
@@ -52,13 +53,46 @@
             text-align: center;
         }
         .notice {
+            font-family: 'BBTreeGL';
             font-size: 3.5rem;
             margin: 0;
             padding-top: 20%;
         }
-        #singer1, #singer2, #singer3 {
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
             width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
         }
+
+        .modal-content{
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close{
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
 	</style>
 
 </head>
@@ -68,8 +102,17 @@
 		<img id="title" src="{% static '/image/서강여행.png' %}">
 	</div>
 	<div class="note">
-		<h1 class="notice">지금은 다이나믹 듀오 공연중!</h1>
-        <p style="font-size: 40px; margin-top: 2%;"><a href="#">지나간 공지 다시보기</a></p>
+		<h2 class="notice" style="font-size: 3rem;">5월 14일 화요일 일정</h2>
+        <div class="14th">
+            <p style="text-align: center; font-size: 2rem">17:30~19:00 | Busking<br>19:00~23:30 | 영화제</p>
+        </div>
+        <button id="myBtn">축제 전체 일정 보기</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>sss</p>
+            </div>
+        </div>
 	</div>
 	<div class="menu">
 		<a class="icon1" href="../booth/index"></a>
@@ -79,16 +122,36 @@
 	</div>
 	</section>
     <section class="two-page">
-        <h1 style="font-size: 100px; margin: 0; padding-top: 10%; padding-left: 5%;a">공연 라인업</h1>
-        <div style="width: 100%;">
-        <img id="singer1" src="{% static '/image/dynamicduo.png' %}">
+        <img id="timetable" src="{% static '/image/timetable.jpg' %}">
+        <div class="14th">
+            <p>5월 14일 (화)</p>
+            <p>17:30~19:00 | Busking<br>19:00~23:30 | 영화제</p>
         </div>
-        <div>
-        <img id="singer2" src="{% static '/image/idle.png' %}">
+        <div class="16th">
+            <p>5월 16일 (목)</p>
+            <p>12:00~13:00 | Water Fight<br>18:00~22:00 | 서강 티셔츠 경연 대회<br>축하공연 | WNT 크루</p>
         </div>
-        <div>
-        <img id="singer3" src="{% static '/image/next.png' %}">
+        <div class="17th">
+            <p>5월 17일 (금)</p>
+            <p>Carnival<br>축하공연 | 다이나믹 듀오<br>축하공연 | (여자)아이들</p>
         </div>
     </section>
+<script>
+var modal = document.getElementById('mymodal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none;
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
+
 </html>
