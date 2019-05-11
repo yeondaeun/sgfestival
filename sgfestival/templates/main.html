@@ -1,0 +1,158 @@
+{% load static %}
+<html>
+<head>
+    <link rel='stylesheet' type='text/css' href='{% static "css/sgfestival.css"%}'>
+	<style>
+        .menu {
+            position: relative;
+            width: 100%;
+            background-image: url("static/image/새지구본.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin-bottom: 0;
+            height: 40vh;
+            display: flex;
+        }
+        .note {
+            background-image: url("static/image/네개수첩.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 30vh;
+            text-align: center;
+        }
+        
+	</style>
+
+</head>
+<body>
+	<section class="one-page">
+        <div class="title">
+            <img id="title" src="{% static 'image/서강여행.png' %}">
+        </div>
+        <div class="note" style="display: flex;">
+            <canvas id="canvas"></canvas>
+            
+            <h2 class="notice" style="font-size: 4rem;">5월 14일 (화)</h2>
+            <div class="14th" style="padding-top: 12%; padding-left: 4%;"> 
+                <p style="text-align: center; font-size: 2.5rem">17:30~19:00 | Busking<br>19:00~23:30 | 영화제</p>
+                <button id="myBtn">축제 전체 일정 보기</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <img src="{% static '/image/timetable.jpg' %}" style="width: 780px;">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="menu">
+            <a class="icon1" href="../booth/index"></a>
+            <a class="icon2" href="../foodtruck/index"></a>
+            <a class="icon3" href="../timetable/index"></a>
+            <a class="icon4" href="../game/start"></a>
+        </div>
+	</section>
+    <!--<section class="two-page">
+        <img id="timetable" src="{% static '/image/timetable.jpg' %}">
+        <div class="14th">
+            <p>5월 14일 (화)</p>
+            <p>17:30~19:00 | Busking<br>19:00~23:30 | 영화제</p>
+        </div>
+        <div class="16th">
+            <p>5월 16일 (목)</p>
+            <p>12:00~13:00 | Water Fight<br>18:00~22:00 | 서강 티셔츠 경연 대회<br>축하공연 | WNT 크루</p>
+        </div>
+        <div class="17th">
+            <p>5월 17일 (금)</p>
+            <p>Carnival<br>축하공연 | 다이나믹 듀오<br>축하공연 | (여자)아이들</p>
+        </div>
+    </section>-->
+
+    <script type="text/javascript">
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+        const canvasEl = document.querySelector('#canvas');
+
+        const w = canvasEl.width = window.innerWidth;
+        const h = canvasEl.height = window.innerHeight;
+
+        function loop() {
+        requestAnimationFrame(loop);
+            ctx.clearRect(0,0,w,h);
+        
+        confs.forEach((conf) => {
+            conf.update();
+            conf.draw();
+        })
+        }
+
+        function Confetti () {
+        //construct confetti
+        const colours = ['#fde132', '#009bde', '#ff6b00'];
+        
+        this.x = Math.round(Math.random() * w);
+        this.y = Math.round(Math.random() * h)-(h/2);
+        this.rotation = Math.random()*360;
+
+        const size = Math.random()*(w/40);
+        this.size = size < 15 ? 15 : size;
+
+        this.color = colours[Math.floor(colours.length * Math.random())];
+
+        this.speed = this.size/8;
+        
+        this.opacity = Math.random();
+
+        this.shiftDirection = Math.random() > 0.5 ? 1 : -1;
+        }
+
+        Confetti.prototype.border = function() {
+        if (this.y >= h) {
+            this.y = h;
+        }
+        }
+
+        Confetti.prototype.update = function() {
+        this.y += this.speed;
+        
+        if (this.y <= h) {
+            this.x += this.shiftDirection/5;
+            this.rotation += this.shiftDirection*this.speed/100;
+        }
+
+        this.border();
+        };
+
+        Confetti.prototype.draw = function() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, this.rotation, this.rotation+(Math.PI/2));
+        ctx.lineTo(this.x, this.y);
+        ctx.closePath();
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        };
+
+        const ctx = canvasEl.getContext('2d');
+        const confNum = Math.floor(w / 8);
+        const confs = new Array(confNum).fill().map(_ => new Confetti());
+
+        loop();
+    </script>
+</body>
+
+</html>

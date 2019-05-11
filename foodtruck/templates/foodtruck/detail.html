@@ -1,0 +1,19 @@
+<h1>{{ truck.truckname }}</h1>
+<img src="#" alt="대표사진">
+<h3>한줄 설명: {{ truck.truckinfo }}</h3>
+
+<h5>메뉴</h5>
+{% for menu in menus %}
+    <p>{{menu.menuname}} | {{menu.menuprice}}</p><br>
+{% endfor %}
+
+<h5>댓글</h5>
+{% for comment in comments %}
+    <p>{{comment.writer}} : {{comment.content}}</p><br>
+{% endfor %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label>댓글:</label><input type="text" name="content">
+    <input type="submit" value="저장"/>
+</form>

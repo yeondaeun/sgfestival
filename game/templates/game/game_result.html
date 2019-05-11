@@ -1,0 +1,11 @@
+<h1>{{name}}님의 점수는?</h1>
+{{totalpoint}}
+
+
+<h2>다른 서강인의 점수는 어떨까요?</h2>
+
+{%for i in result %}
+    {{i.0}}점: {{i.1}}명<br>
+{%endfor%}
+
+<a href="{%url 'game_start'%}">홈으로</a>

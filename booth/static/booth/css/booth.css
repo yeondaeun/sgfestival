@@ -1,0 +1,43 @@
+*{
+    font-family: 'BBTreeGL';
+}
+.bottom{
+    color:gray;
+    font-size:12px;
+    text-align: left;
+}
+.banner{
+    width: 95%;
+    height: 80px;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.04);
+    border: solid 0.5px #d6d6d6;
+    background-color:#FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.b_number {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #C8B5EF;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    font-size: 20px;
+}
+.b_title{
+    font-size: 18px;
+    width: 65%;
+}
+.b_more{
+    width: 10%;
+    font-size: 10px;
+}
+.counter{
+    font-size:10px;
+    margin-left: 10px;
+}
