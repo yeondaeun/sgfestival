@@ -45,8 +45,8 @@
             position: relative;
             color: #fff;
             border: none;
-            padding: 1.25em 2em;
-            font-size: 1em;
+            padding: 1em 1.25em;
+            font-size: 2em;
             letter-spacing: 1px;
             cursor: pointer;
             box-shadow: 0 10px 20px rgba(0,0,0,.1);
