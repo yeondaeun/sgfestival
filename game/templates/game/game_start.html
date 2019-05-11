@@ -1,2 +1,55 @@
-<h1>게임 시작하기</h1>
-<a href="{%url 'answer_new'%}">button</a>
+{%extends 'booth/application.html'%}
+{%block content%}
+<head>
+    <style>
+    @font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+    body {
+        background-color: #f2cee6;
+    }
+    .ment {
+        font-family: 'S-CoreDream-8Heavy';
+        margin-bottom: 0;
+    }
+    .quiz {
+        font-family: 'S-CoreDream-8Heavy';
+        font-size: 100px;
+    }
+    .t-stroke {
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #0d1b1e;
+        color: transparent;
+    }
+        
+    .t-shadow {
+        text-shadow: 7px 7px #b0c9f1;
+    }
+
+    button {
+        margin-top: 30px;
+        background-color: #8aace2;
+        position: relative;
+        color: #ffffff;
+        border: none;
+        padding: 0.7em 1.25em;
+        font-size: 20px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .start {
+        font-family: 'S-CoreDream-8Heavy';
+        color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="title" style="text-align: center; margin-top: 50px;">
+        <p class="ment">나는 고학일까, 아닐까?</p>
+        <h1 class="quiz t-stroke t-shadow">고학<br>퀴즈</h1>
+    
+    <button><a class="start" href="{%url 'answer_new'%}">시작!</a></button>
+    </div>
+</body>
+{%endblock%}

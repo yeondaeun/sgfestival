@@ -1,14 +1,98 @@
-<h1>서강퀴즈</h1>
+{%extends 'booth/application.html'%}
+{%block content%}
+<head>
+    <style>
+        @font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+        body {
+            background-color: #f2cee6;
+        }
+        .quiz {
+            font-family: 'S-CoreDream-8Heavy';
+            font-size: 40px;
+        }
+        .t-stroke {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #0d1b1e;
+            color: transparent;
+        }
+            
+        .t-shadow {
+            text-shadow: 3px 3px #b0c9f1;
+        }
+        button {
+            margin-top: 15px;
+            margin-bottom: 30px;
+            background-color: #8aace2;
+            position: relative;
+            color: #ffffff;
+            border: none;
+            padding: 0.7em 1.25em;
+            font-size: 15px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
+        }
+
+        .name {
+            background-color: #e0afd0;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        /*input[type="radio"]{
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            margin: 0 15px / 2;
+            outline: 15px / 2 solid #bbbabb;
+            outline-offset: 15px / -2;
+            cursor: pointer;
+            backface-visibility: hidden;
+            border-radius: 50%;
+            transform: rotate(45deg) scale(1);
+            will-change: transform;
+        }
+            input[type="radio"]:checked {
+                animation: active 1s ease forwards;
+            }
+        
+
+
+        @keyframes active {
+            25% {
+                transform: rotate(45deg) scale(1.5);
+            }
+            75% {
+                transform: rotate(45deg) scale(1.25);
+            }
+            50%,100% {
+                transform: rotate(45deg) scale(1);
+                box-shadow:	0 15px / -2 0 0 #e0afd0,	15px / -2 0 0 0 #e0afd0
+                outline-color: #e0afd0;
+            }
+        }*/
+        
+    </style>
+</head>
+<body>
+<div class="game" style="text-align: center;">
+<h1 class="quiz t-stroke t-shadow">고학퀴즈</h1>
 
 <form method="POST" class="post-form">{%csrf_token%}
-    당신의 이름/별명을 알려주세요! <input type="text" id="name" name="name" required/> <br>
+    <div class="name">
+    당신의 이름/별명을 알려주세요! <input type="text" id="name" name="name" required/></div> <br>
     {% for question in questions_list %}
         <b>{{question.question}}</b><br>
-        <input type="radio" id="c1" name="answer_{{ forloop.counter }}" value="1" required/>{{question.c1}}<br>
-        <input type="radio" id="c2" name="answer_{{ forloop.counter }}" value="2"/>{{question.c2}}<br>
-        <input type="radio" id="c3" name="answer_{{ forloop.counter }}" value="3"/>{{question.c3}}<br>
-        <input type="radio" id="c4" name="answer_{{ forloop.counter }}" value="4"/>{{question.c4}}<br>
-        <br>
+        <div class="round" style="margin-top: 10px;">
+        <input type="radio" id="c1" name="answer_{{ forloop.counter }}" value="1" required/> {{question.c1}}<br>
+        <input type="radio" id="c2" name="answer_{{ forloop.counter }}" value="2"/> {{question.c2}}<br>
+        <input type="radio" id="c3" name="answer_{{ forloop.counter }}" value="3"/> {{question.c3}}<br>
+        <input type="radio" id="c4" name="answer_{{ forloop.counter }}" value="4"/> {{question.c4}}<br>
+        </div>
+        <hr class="line" style="background-color: #e0afd0;">
     {% endfor %}
-    <button type="submit">Save</button>
+    <button type="submit">저장!</button>
 </form>
+</div>
+</body>
+{%endblock%}
