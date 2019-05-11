@@ -19,7 +19,7 @@ def detail(request, index):
     
 
     if request.method == "POST":
-        form = CommentForm(request.POST.get("content"))
+        form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.writer = ""+random.choice(adv)+" "+random.choice(color)+" "+random.choice(noun)+""
