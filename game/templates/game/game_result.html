@@ -1,11 +1,64 @@
-<h1>{{name}}님의 점수는?</h1>
-{{totalpoint}}
+{%extends 'booth/application.html'%}
+{%block content%}
+<head>
+    <style>
+    @font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+        body {
+            background-color: #f2cee6;
+        }
+        .quiz {
+            font-family: 'S-CoreDream-8Heavy';
+            font-size: 40px;
+        }
+        .t-stroke {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #0d1b1e;
+            color: transparent;
+        }
+            
+        .t-shadow {
+            text-shadow: 3px 3px #b0c9f1;
+        }
+        .name {
+            background-color: #e0afd0;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+        button {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            background-color: #8aace2;
+            position: relative;
+            color: #ffffff;
+            border: none;
+            padding: 0.5em 1.2em;
+            font-size: 20px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
+        }
+        .start {
+            font-size: 15px;
+            color: #fff;
+        }
+    </style>
+</head>
 
+<body>
+<div class="result" style="text-align: center;">
+<h1 class="quiz t-stroke t-shadow">고학퀴즈</h1>
+<div class="name">
+<h4>{{name}}님의 점수는?</h4>
+<h2 style="margin-bottom: 0;">{{totalpoint}}점</h2>
+</div>
 
-<h2>다른 서강인의 점수는 어떨까요?</h2>
+<h4 style="margin-top: 10px;">다른 서강인의 점수는 어떨까요?</h4>
 
 {%for i in result %}
     {{i.0}}점: {{i.1}}명<br>
 {%endfor%}
 
-<a href="{%url 'game_start'%}">홈으로</a>
+<button><a class="start" href="{%url 'game_start'%}">홈으로</a></button>
+</div>
+</body>
+{%endblock%}

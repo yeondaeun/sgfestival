@@ -1,20 +1,21 @@
-{% load static %}
+{%extends 'booth/application.html'%}
+{%load static%}
+{%block content%}
 <html>
 <head>
 <style>
         @font-face { font-family: 'BBTreeGL'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGL.woff') format('woff'); font-weight: normal; font-style: normal; }
-
+        body {
+            background-color: #e6e6e6;
+        }
         .lineup {
             text-align: center;
-            height: 100vh;
-            width: 100vw;
             background-size: contain;
             position: relative;
-            background-color: #e6e6e6;
         }
 
         #singer1, #singer2, #singer3 {
-            width: 85%;
+            width: 100%;
         }
         .body {
             font-family: 'BBTreeGL';
@@ -23,44 +24,54 @@
 
         .title {
             font-family: 'BBTreeGL';
-            margin-left: 20px;
-            font-size: 2.5rem;
+            margin-left: 10px;
+            font-size: 15px;
             margin-top: 0;
             margin-bottom: 0;
-            padding-top: 30px;
+            padding-top: 28px;
         }
 
         .kkori {
-            width: 220px;
-            height: 100px;
+            width: 100px;
+            height: 53px;
+            margin-top: 10px;
         }
 
 </style>
 <body>
+
+
 <section class="lineup">
-<h1 style="font-family: 'BBTreeGL'; font-size: 80px; margin: 0; padding-top: 5%; padding-bottom: 5%;">공연 일정</h1>
     <div>
         <div class="title-area" style="display: flex;">
             <img class="kkori" src="{% static '/image/no1.png' %}">
             <p class="title">5월 16일 (목) <strong>WNT크루</strong></p>
         </div>
-        <img id="singer1" src="{% static '/image/dynamicduo.png' %}">
+        <img id="singer1" src="{% static '/image/wntcrew-un.png' %}">
     </div>
     <div>
         <div class="title-area" style="display: flex;">
             <img class="kkori" src="{% static '/image/no2.png' %}">
-            <p class="title">5월 17일 (금) <strong>다이나믹 듀오</strong></p>
+            <p class="title">5월 17일 (금) <strong>다이나믹 듀오 with 김선재</strong></p>
         </div>
-        <img id="singer2" src="{% static '/image/dynamicduo.png' %}">
+        <img id="singer2" src="{% static '/image/dynamicduo-un.png' %}">
     </div>
     <div>
         <div class="title-area" style="display: flex;">
             <img class="kkori" src="{% static '/image/no3.png' %}">
             <p class="title">5월 17일 (금) <strong>(여자)아이들</strong></p>
         </div>
-        <img id="singer3" src="{% static '/image/idle.png' %}">
+        <img id="singer3" src="{% static '/image/idle-un.png' %}">
+    </div>
+    <div>
+        <div class="title-area" style="display: flex;">
+            <img class="kkori" src="{% static '/image/no4.png' %}">
+            <p class="title">5월 17일 (금) <strong>재키와이</strong></p>
+        </div>
+        <img id="singer3" src="{% static '/image/wai-un.png' %}">
     </div>
 </section>
 
 <body>
 </html>
+{%endblock%}

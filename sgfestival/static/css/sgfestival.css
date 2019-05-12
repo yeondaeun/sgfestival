@@ -34,18 +34,30 @@
 		}
         
         .notice {
-            font-family: 'BBTreeGL';
+            font-family: "Source Sans Pro", sans-serif;
+            letter-spacing: 3px * 2;
             font-size: 3.5rem;
             margin: 0;
             padding-top: 23%;
             padding-left: 10%;
         }
+/*
+        .t-stroke {
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #0d1b1e;
+            color: transparent;
+        }*/
+        
+        .t-shadow {
+            text-shadow: 7px 7px #b0c9f1;
+        }
         #myBtn {
-            background-color: #0D52E9;
+            font-family: 'BBTreeGL';
+            background-color: #82a2d6;
             position: relative;
             color: #fff;
             border: none;
-            padding: 1em 1.25em;
+            padding: 0.7em 1.25em;
             font-size: 2em;
             letter-spacing: 1px;
             cursor: pointer;
