@@ -8,21 +8,12 @@ class Booth(models.Model):
     name = models.CharField(max_length=200)
     place = models.CharField(max_length=200)
     content = models.TextField()
-    check = models.IntegerField()
-
-    
-    
+    checkbooth = models.IntegerField()
 
 class Photo(models.Model):
     booth = models.ForeignKey(Booth, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/', blank=True )
     created_at = models.DateTimeField(auto_now_add=True)
-
-
-
-
-
-    
 
 # 게시글 조회 기록 저장
 class HitCount(models.Model):
