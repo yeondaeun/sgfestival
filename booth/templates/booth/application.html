@@ -39,16 +39,27 @@
             padding-top: 30px;
             padding-bottom: 30px;
           }
+          .dropdown-menu{
+            min-width: 7rem;
+          }
     </style>
   </head>
 
   <body>
     <div class='d-block d-sm-none'>
-      <div class='logo' onclick="location.href='{% url 'main'%}'" style='width:100%; height:108px; cursor: pointer;'>
-          <img src='{%static "booth/images/travelsoganglogo.png"%}' style='width:60%;'>
+      <div class='logo' style='width:100%; height:108px;'>
+          <img src='{%static "booth/images/travelsoganglogo.png"%}' onclick="location.href='{% url 'main'%}'" style='width:60%; cursor: pointer;'>
       </div>
       <div class='j_navbar' style='font-size:15px;'>
-          <div class='sections 1'><a href='{%url "booth_list"%}'>플리/마당</a></div>
+          <div class="dropdown">
+            <div class="section 1 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              플리/마당
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="{%url 'booth_list'%}">플리마켓</a>
+              <a class="dropdown-item" href="{%url 'booth_list'%}">마당사업</a>
+            </div>
+          </div>
           <div class='sections 2'><a href='{%url "booth_list"%}'>푸드트럭</a></div>
           <div class='sections 3'><a href='{%url "truckindex"%}'>타임테이블</a></div>
           <div class='sections 4'><a href='{%url "index"%}'>게임</a></div>
