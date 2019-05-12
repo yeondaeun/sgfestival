@@ -5,9 +5,14 @@ from .models import Booth, Photo
 
 def booth_list(request):
     booths = Booth.objects.filter(checkbooth="madang")
+    
+    return render(request, 'booth/booth.html', {'booths': booths})
+
+def flee_list(request):
+    
     flees = Booth.objects.filter(checkbooth="flee")
-    # flees = Flee.objects.all
-    return render(request, 'booth/booth.html', {'booths': booths, 'flees': flees})
+    
+    return render(request, 'booth/booth.html', {'flees': flees})
 
 
 def booth_detail(request, index):
