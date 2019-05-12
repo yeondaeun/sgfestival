@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Question, Answer
+from .models import Question, Answer, Award
 # Create your views here.
 
 def game_start(request):
@@ -52,6 +52,7 @@ def answer_new(request):
         
 def answer_result(request, pk):
     answer = get_object_or_404(Answer, pk=pk)
+    count = answer.id
     total = answer.total
     name = answer.name
     rangelist=[]
@@ -60,4 +61,9 @@ def answer_result(request, pk):
     for answer in Answer.objects.all():
         rangelist[answer.total][1]+=1
     rangelist = reversed(rangelist)
-    return render(request, "game/game_result.html", {'totalpoint':total, 'result':rangelist, 'name':name})
+    if total == 20: award = Award.objects.get(id=1)
+    elif total>=15: award = Award.objects.get(id=2)
+    elif total>=10: award = Award.objects.get(id=3)
+    elif total>=6: award = Award.objects.get(id=4)
+    else: award = Award.objects.get(id=5)
+    return render(request, "game/game_result.html", {'totalpoint':total, 'result':rangelist, 'name':name, 'award':award, 'count':count})
