@@ -1,5 +1,6 @@
 {%extends 'booth/application.html'%}
 {%block content%}
+{%load static%}
 <head>
     <style>
         @font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -83,6 +84,9 @@
     당신의 이름/별명을 알려주세요! <input type="text" id="name" name="name" required/></div> <br>
     {% for question in questions_list %}
         <b>{{question.question}}</b><br>
+        {% if question.imagelink%}
+            <img src="{% static question.imagelink %}" height=200/>
+        {% endif%}
         <div class="round" style="margin-top: 10px;">
         <input type="radio" id="c1" name="answer_{{ forloop.counter }}" value="1" required/> {{question.c1}}<br>
         <input type="radio" id="c2" name="answer_{{ forloop.counter }}" value="2"/> {{question.c2}}<br>
