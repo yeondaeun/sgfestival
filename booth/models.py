@@ -8,7 +8,7 @@ class Booth(models.Model):
     name = models.CharField(max_length=200)
     place = models.CharField(max_length=200)
     content = models.TextField()
-    checkbooth = models.IntegerField()
+    checkbooth = models.CharField(max_length=200, default='')
 
 class Photo(models.Model):
     booth = models.ForeignKey(Booth, on_delete=models.CASCADE)
