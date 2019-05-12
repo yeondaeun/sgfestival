@@ -1,0 +1,82 @@
+
+
+.toptop{
+    background: url(/static/foodtruck/image/pink.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 423px;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.paper{
+    background-color:white;
+    border: 1px solid gray;
+
+    border-radius: 9px;
+    width: 75%;
+    padding-top: 10px;
+
+}
+
+.foodtrucknav{
+    margin-top:20px;
+}
+.paperbottom{
+    font-size:25px;
+    padding: 10px;
+}
+.papertop{
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 10px;
+}
+.go{
+    margin-left:10px;
+}
+
+.lemenu,.lereview,.lereview_under,.lecomment{
+    width:90%;
+    margin: 0 auto;
+}
+.lemenu, .lereview{
+    font-size: 25px;
+    margin-top:20px;
+}
+.author{
+    color: gray;
+}
+.lereview_bottom, .lemenu_bottom{
+    font-size:15px;
+    margin-top:10px;
+    width:90%;
+    margin: 10px auto;
+}
+.lereview, .lemenu{
+    border-bottom: 2px dotted pink;
+}
+
+.writecomment{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:10px
+}
+.contentofinput{
+    width:85%;
+    border: 1px solid pink;
+    border-radius: 5px;
+}
+.submitofinput{
+    border: 1px solid pink;
+    border-radius: 5px;
+}
+.empty_space{
+    border-top: 2px dotted pink;
+    height:30px;
+    width: 90%;
+    margin: 0 auto;
+}

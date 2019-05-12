@@ -7,7 +7,8 @@
 {% for truck in trucks_list %}
 
     <!-- Button trigger modal -->
-    <button type="button" class="banner" style='display:flex;' data-toggle="modal" data-target="#{{truck.id}}">
+
+    <div class="banner" onclick="location.href='{% url 'detail' index=truck.pk %}'" style='display:flex; cursor: pointer;'>
         <div class='b_number' style='background-color:#FA899A; color:white;'>{{truck.id}}</div>
         <div class='b_title'>
             <div class='top' style='display:flex; align-items: center;'>
@@ -19,53 +20,8 @@
             <div class='bottom'>#존맛탱구리 #모델 추가해주세요</div>
         </div>
         <div class='b_more'>더보기</div>
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="{{truck.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">{{truck.id}}.{{truck.truckname}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {%if truck.truckphoto %}
-                    <img src='{{ truck.truckphoto.url }}' style='width:90%; display:block; margin:0 auto;'><br>
-                    {%endif%}
-                    장소: {{ truck.truckplace }}<br>
-                    내용: {{ truck.truckinfo }}<br>
-                    일시: {{truck.truckdate}} : {{truck.trucktime}}<br>
-
-                    <h5>메뉴</h5>
-                    {% for menu in menus %}
-                        <p>{{menu.menuname}} | {{menu.menuprice}}</p><br>
-                    {% endfor %}
-
-                    <h5>댓글</h5>
-                    {% for comment in comments %}
-                        <p>{{comment.writer}} : {{comment.content}}</p><br>
-                    {% endfor %}
-
-                    <form method="POST">
-                        {% csrf_token %}
-                        <label>댓글:</label><input type="text" name="content">
-                        <input type="submit" value="저장"/>
-                    </form>
-
-
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
     </div>
+
 
 {% endfor %}
 
