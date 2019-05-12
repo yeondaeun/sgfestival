@@ -3,7 +3,7 @@
 
 {%block content%}
 
-<img src="{% static 'booth/images/fleamarketimg.png' %}" style='width:100%;'>
+<img src="{% static 'booth/images/realwen.png' %}" style='width:100%;'>
 
 {% for booth in booths %}
 
@@ -15,7 +15,7 @@
                 <div class='top_title'>
                     <a href= "{% url 'booth_detail' index=booth.pk %}">{{ booth.name }}</a>
                 </div>
-
+                <div class='counter'>({{booth.hitcount_set.count}})</div>
             </div>
             <div class='bottom'>#존맛탱구리 #모델 추가해주세요</div>
         </div>
