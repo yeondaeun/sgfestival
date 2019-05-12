@@ -39,3 +39,4 @@ class Answer(models.Model):
 class Award(models.Model):
     title = models.CharField(max_length=200, default='')
     content = models.CharField(max_length=1000)
+    imagelink = models.CharField(max_length=2000, default='')

@@ -1,5 +1,6 @@
 {%extends 'booth/application.html'%}
 {%block content%}
+{%load static%}
 <head>
     <style>
     @font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -54,7 +55,7 @@
 </div>
 <p>{{award.title}}</p>
 <p>{{award.content}}</p>
-
+<img src="{% static award.imagelink %}" height=200/>
 <h4 style="margin-top: 10px;">다른 서강인의 점수는 어떨까요?</h4>
 
 {%for i in result %}
