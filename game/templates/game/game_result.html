@@ -50,12 +50,12 @@
 <h1 class="quiz t-stroke t-shadow">서강수능</h1>
 <div class="name">
 <h4>{{name}}님의 점수는?</h4>
-<h2 style="margin-bottom: 0;">{{totalpoint}}점</h2>
-<h2 style="margin-bottom: 0;">{{count}}번째 서강인입니다!</h2>
-</div>
+<h2 style="margin-bottom: 0;"><strong>{{totalpoint}}점</strong></h2>
+<h5 style="margin-bottom: 0;">{{count}}번째 서강인입니다!</h5>
+</div><br>
 <p>{{award.title}}</p>
-<p>{{award.content}}</p>
-<img src="{% static award.imagelink %}" height=200/>
+<img src="{% static award.imagelink %}" style="height: 200px;"/>
+<p>{{award.content}}</p><hr class="line" style="background-color: #e0afd0;">
 <h4 style="margin-top: 10px;">다른 서강인의 점수는 어떨까요?</h4>
 
 {%for i in result %}
