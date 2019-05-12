@@ -4,8 +4,8 @@ from .models import Booth, Photo, HitCount
 
 
 def booth_list(request):
-    booths = Booth.objects.filter(checkbooth=1)
-    flees = Booth.objects.filter(checkbooth=2)
+    booths = Booth.objects.filter(checkbooth="madang")
+    flees = Booth.objects.filter(checkbooth="flee")
     # flees = Flee.objects.all
     return render(request, 'booth/booth.html', {'booths': booths, 'flees': flees})
 

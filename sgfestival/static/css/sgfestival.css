@@ -16,18 +16,17 @@
 		#title, #note, #menu {
 			width: 100%;
 		}
-        #title {
-            height: 30vh;
-        }        
+                
 		.icon1, .icon2, .icon3, .icon4 {
             width: 25%;
-            height: 20vh;
+            height: 30vh;
+            z-index: 10;
 		}
         .icon1, .icon4 {
-            margin-top: 15%;
+            margin-top: 18%;
         }
         .icon2, .icon3 {
-            margin-top: 7%;
+            margin-top: 10%;
         }
 		.html, .title, .note, .menu {
 			background-color: #b0c9f1;
@@ -41,12 +40,6 @@
             padding-top: 23%;
             padding-left: 10%;
         }
-/*
-        .t-stroke {
-            -webkit-text-stroke-width: 3px;
-            -webkit-text-stroke-color: #0d1b1e;
-            color: transparent;
-        }*/
         
         .t-shadow {
             text-shadow: 7px 7px #b0c9f1;

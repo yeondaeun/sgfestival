@@ -10,31 +10,70 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='{% static "booth/css/application.css"%}'>
     <link rel='stylesheet' type='text/css' href='{% static "booth/css/booth.css"%}'>
+    <link rel='stylesheet' type='text/css' href='{% static "foodtruck/css/foodtruckdetail.css"%}'>
     <style>
         @font-face { font-family: 'BBTreeGL'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGL.woff') format('woff'); font-weight: normal; font-style: normal; }
         a {
           color:#0A0909;
         }
-      
+
+        .wrapper {
+          background-color:#B1B6B9;
+          height: 100%; 
+          width: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: fixed;
+          left: 0;
+          top: 0;         
+          }
+          .whitebanner{
+            width:60%;
+            background-color: white;
+            font-size:40px;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 5px;
+            margin-top: 150px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
     </style>
   </head>
-  <body>
-    <div class='logo' style='width:100%; height:108px;'>
-        <img src='{%static "booth/images/travelsoganglogo.png"%}' style='width:60%;'>
-    </div>
-    <div class='j_navbar' style='font-size:15px;'>
-        <div class='sections 1'><a href='{%url "booth_list"%}'>플리마켓</a></div>
-        <div class='sections 2'><a href='{%url "booth_list"%}'>마당사업</a></div>
-        <div class='sections 3'><a href='{%url "truckindex"%}'>푸드트럭</a></div>
-        <div class='sections 4'><a href='{%url "index"%}'>타임테이블</a></div>
-    </div>
-    {%block content%}
-    {%endblock%}
 
+  <body>
+    <div class='d-block d-sm-none'>
+      <div class='logo' onclick="location.href='{% url 'main'%}'" style='width:100%; height:108px; cursor: pointer;'>
+          <img src='{%static "booth/images/travelsoganglogo.png"%}' style='width:60%;'>
+      </div>
+      <div class='j_navbar' style='font-size:15px;'>
+          <div class='sections 1'><a href='{%url "booth_list"%}'>플리/마당</a></div>
+          <div class='sections 2'><a href='{%url "booth_list"%}'>푸드트럭</a></div>
+          <div class='sections 3'><a href='{%url "truckindex"%}'>타임테이블</a></div>
+          <div class='sections 4'><a href='{%url "index"%}'>게임</a></div>
+      </div>
+      {%block content%}
+      {%endblock%}    
+    </div>
+
+    <div class='d-none d-sm-block wrapper'>
+        <div class='whitebanner'>
+          <h1>MOBILE ONLY!</h1>
+          <img src='{%static "booth/images/saddy.png"%}' style='width:150px; padding-top:10px; padding-bottom:20px;'>
+          <h4>모바일 전용 페이지입니다</h4>
+          <h4>휴대폰으로 봐주세요~</h4>
+        </div>
+        
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
   </body>
+
 </html>
