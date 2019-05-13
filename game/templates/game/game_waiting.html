@@ -89,29 +89,10 @@
     </style>
 </head>
 <body>
-
-<div class="game" style="text-align: center;">
-<h1 class="quiz t-stroke t-shadow">서강수능</h1>
-
-<form method="POST" class="post-form">{%csrf_token%}
-    <div class="name">
-    당신의 이름/별명을 알려주세요! <input type="text" id="name" name="name" required/></div> <br>
-    {% for question in questions_list %}
-        <b>{{question.question}}</b><br>
-        {% if question.imagelink%}
-            <img src="{% static question.imagelink %}" height=200/>
-        {% endif%}
-        <div class="round" style="margin-top: 10px;">
-        <input type="radio" id="c1" name="answer_{{ forloop.counter }}" value="1" required/> {{question.c1}}<br>
-        <input type="radio" id="c2" name="answer_{{ forloop.counter }}" value="2"/> {{question.c2}}<br>
-        <input type="radio" id="c3" name="answer_{{ forloop.counter }}" value="3"/> {{question.c3}}<br>
-        <input type="radio" id="c4" name="answer_{{ forloop.counter }}" value="4"/> {{question.c4}}<br>
-        <input type="hidden" name="id_{{forloop.counter}}" value="{{question.id}}">
-        </div>
-        <hr class="line" style="background-color: #e0afd0;">
-    {% endfor %}
-    <button type="submit">내 점수 보기</button>
-</form>
+<div class ="game_notice">
+    <p class = "notice"><strong>아직 준비중입니다 ㅠㅠ</strong><br>기대해주세요!<p>
+    <button><a class="start" href="{%url 'game_start'%}">홈으로</a></button>
 </div>
+
 </body>
 {%endblock%}
