@@ -34,10 +34,23 @@
             box-shadow: 0 10px 20px rgba(0,0,0,.1);
         }
 
+        .start {
+            color: #fff;
+        }
+
         .name {
             background-color: #e0afd0;
             padding-top: 7px;
             padding-bottom: 7px;
+        }
+
+        .game_notice {
+            margin-top: 30%;
+            text-align: center;
+        }
+
+        .notice {
+            font-size: 20px;
         }
 
         /*input[type="radio"]{
@@ -76,6 +89,12 @@
     </style>
 </head>
 <body>
+<div class ="game_notice">
+    <p class = "notice"><strong>아직 준비중입니다 ㅠㅠ</strong><br>기대해주세요!<p>
+    <button><a class="start" href="{%url 'game_start'%}">홈으로</a></button>
+</div>
+
+<!--
 <div class="game" style="text-align: center;">
 <h1 class="quiz t-stroke t-shadow">서강수능</h1>
 
@@ -97,6 +116,6 @@
     {% endfor %}
     <button type="submit">내 점수 보기</button>
 </form>
-</div>
+</div>-->
 </body>
 {%endblock%}
