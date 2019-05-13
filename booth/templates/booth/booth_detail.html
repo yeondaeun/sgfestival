@@ -1,9 +1,48 @@
+{%extends 'booth/application.html'%}
+{%load static%}
+{%block content%}
 
+    <style>
+        .jane{
+            background: url(/static/booth/images/D.png);
+        }
+    </style>
+  <body>
+    <div class='toptop jane'>
+        <div class='paper'>
+            <div class='papertop' style='display:flex;'>
+                <div class='left_papertop' style='display: flex;'>
+                    <div class='arrow' onclick="location.href='javascript:history.back()'" style='width: 20px; cursor: pointer;'>
+                        <img src='{%static "foodtruck/image/arrowarrow.png"%}' style='width: 20px;'>
+                    </div>
+                    <div class='go' onclick="location.href='javascript:history.back()'" style='cursor: pointer;'>플리마켓/마당사업으로</div>                
+                </div>
+                <div clss='right_papertop'>
+                    <div class='d' style='color:#FA899A'>{{ booth.place }}번</div>
+                </div>
+            </div>
+            <div class='papermiddle'>   
+                {% for photo in photos %}
+                    <img src="{{ photo.image.url}}" style='width:90%; display:block; margin:0 auto;'>
+                {% endfor %}
+            </div>
+            <div class='paperbottom' style='text-align:center;'>{{ booth.name }}</div>
+        </div>
+    </div>
 
+    <div class='lemenu'>CONTENTS</div>
+    <div class='lereview_under_menu'></div>
+    <div class='lemenu_bottom'>
+        {{ booth.content }}
+    </div>
 
-이름: {{ booth.name }}<br>
-장소: {{ booth.place }}<br>
-내용: {{ booth.content }}<br>
-{% for photo in photos %}
-    <img src="{{ photo.image.url}}">
-{% endfor %}
+    <div class='lereview'>WHERE? : {{ booth.place }}번 부스 <br></div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+{%endblock%}

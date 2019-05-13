@@ -15,6 +15,19 @@ def flee_list(request):
     return render(request, 'booth/booth.html', {'flees': flees})
 
 
+
+def tues_list(request):
+    tues = Booth.objects.filter(checkbooth="tues")
+    return render(request, 'booth/tues.html', {'booths': tues})
+def wednes_list(request):
+    wednes = Booth.objects.filter(checkbooth="wednes")
+    return render(request, 'booth/wednes.html', {'booths': wednes})
+def thurs_list(request):
+    thurs = Booth.objects.filter(checkbooth="thurs")
+    return render(request, 'booth/thurs.html', {'booths': thurs})    
+
+
+
 def booth_detail(request, index):
     booth = get_object_or_404(Booth, pk=index)  #booth꺼랑 flee쪽 다 포함임
     photos = Photo.objects.filter(booth=booth)

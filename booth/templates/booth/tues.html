@@ -3,23 +3,23 @@
 
 {%block content%}
 
-<img src="{% static 'booth/images/fleamarketimg.png' %}" style='width:100%;'>
+<img src="{% static 'booth/images/realtue.png' %}" style='width:100%;'>
 
 {% for booth in booths %}
 
-
     <div class="banner" onclick="location.href='{% url 'booth_detail' index=booth.pk %}'" style='display:flex; cursor: pointer;'>
-        <div class='b_number'>{{booth.id}}</div>
+        <div class='b_number'>{{booth.place}}</div>
         <div class='b_title'>
             <div class='top' style='display:flex; align-items: center;'>
                 <div class='top_title'>
                     <a href= "{% url 'booth_detail' index=booth.pk %}">{{ booth.name }}</a>
                 </div>
             </div>
-            <div class='bottom'>#존맛탱구리 #모델 추가해주세요</div>
+            <div class='bottom'>{{ booth.content|truncatechars:27 }}</div>
         </div>
         <div class='b_more'>더보기</div>
     </div>
+
 
 {% endfor %}
 

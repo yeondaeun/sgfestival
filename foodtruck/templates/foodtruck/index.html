@@ -17,7 +17,7 @@
                 </div>
                 <div class='counter'>리뷰:{{truck.comment_set.count}}개</div>
             </div>
-            <div class='bottom'>#존맛탱구리 #모델 추가해주세요</div>
+            <div class='bottom'>{{ truck.truckinfo|truncatechars:27 }}</div>
         </div>
         <div class='b_more'>더보기</div>
     </div>
