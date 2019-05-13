@@ -2,15 +2,15 @@
 <html>
 <head>
     <link rel='stylesheet' type='text/css' href='{% static "css/sgfestival.css"%}'>
+    
 	<style>
         .menu {
-            position: absolute;
-            width: 100%;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            margin-bottom: -30;
-            height: 30vh;
+            position: relative;
+            width: 100%;            
+            height: 35%;
             display: flex;
+            background-color: #b0c9f1;
+            background-size: 100%;
         }
         .note {
             display:flex;
@@ -37,7 +37,7 @@
             width: 100%;
             bottom: 0;
         }
-        
+
 	</style>
 
 </head>
@@ -69,25 +69,11 @@
             <a class="icon3" href="../timetable/index"></a>
             <a class="icon4" href="../game/start"></a>
         </div>
+        <img id="developers" src="{% static '/image/developers.png' %}">
 	</section>
     <section class="developers">
-        <img id="developers" src="{% static '/image/developers.png' %}">
+        
     </section>
-    <!--<section class="two-page">
-        <img id="timetable" src="{% static '/image/timetable.jpg' %}">
-        <div class="14th">
-            <p>5월 14일 (화)</p>
-            <p>17:30~19:00 | Busking<br>19:00~23:30 | 영화제</p>
-        </div>
-        <div class="16th">
-            <p>5월 16일 (목)</p>
-            <p>12:00~13:00 | Water Fight<br>18:00~22:00 | 서강 티셔츠 경연 대회<br>축하공연 | WNT 크루</p>
-        </div>
-        <div class="17th">
-            <p>5월 17일 (금)</p>
-            <p>Carnival<br>축하공연 | 다이나믹 듀오<br>축하공연 | (여자)아이들</p>
-        </div>
-    </section>-->
 
     <script type="text/javascript">
         var modal = document.getElementById('myModal');

@@ -10,7 +10,7 @@ class Question(models.Model):
     c3 = models.CharField(max_length=300)
     c4 = models.CharField(max_length=300)
     answer = models.IntegerField()
-    imagelink = models.CharField(max_length=2000, default='')
+    imagelink = models.CharField(max_length=2000, default='', blank=True, null=True)
 
 class Answer(models.Model):
     name = models.CharField(max_length=50)
@@ -39,4 +39,4 @@ class Answer(models.Model):
 class Award(models.Model):
     title = models.CharField(max_length=200, default='')
     content = models.CharField(max_length=1000)
-    imagelink = models.CharField(max_length=2000, default='')
+    imagelink = models.CharField(max_length=2000, default='', blank=True, null=True)

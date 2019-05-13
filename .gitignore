@@ -2,8 +2,7 @@
 *.log
 *.pot
 *.pyc
-*~
-__pycache__
+__pycache__/
 myvenv
 local_settings.py
 db.sqlite3
@@ -11,4 +10,3 @@ db.sqlite3
 .DS_Store
 *.ipynb
 media
-db.sqlite3
