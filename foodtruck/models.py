@@ -4,7 +4,7 @@ from django.db import models
 class Foodtruck(models.Model):
     truckname = models.CharField(max_length=200)
     truckplace = models.CharField(max_length=200)
-    truckphoto = models.ImageField(upload_to='images/', blank=True)
+    truckphoto = models.CharField(max_length=2000, default='', blank=True, null=True)
     truckinfo = models.TextField()
     truckdate = models.CharField(max_length=200)
     trucktime = models.CharField(max_length=200)
