@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'foodtruck/index.html', {'trucks_list':trucks})
 
 def detail(request, index):
+    trucks = Foodtruck.objects.all
     truck = get_object_or_404(Foodtruck, pk=index)
     comments = Comment.objects.filter(foodtruck=truck)
     menus = Menu.objects.filter(foodtruck=truck)
@@ -28,4 +29,4 @@ def detail(request, index):
             return redirect('detail', index=truck.pk)
     elif request.method == "GET":
         form = CommentForm()
-        return render(request, 'foodtruck/detail.html', {'truck':truck, 'comments':comments, 'menus':menus})
+        return render(request, 'foodtruck/detail.html', {'truck':truck, 'comments':comments, 'menus':menus, 'trucks_list':trucks})

@@ -28,8 +28,8 @@
     <div class='lemenu'>MENU</div>
     <div class='lereview_under_menu'></div>
     <div class='lemenu_bottom'>
-        {% for menu in menus %}
-            #{{menu.menuname}} {{menu.menuprice}}<br>
+        {% for a in trucks_list %}
+            #{{a.truckinfo}} {{menu.menuprice}}<br>
         {% endfor %}         
     </div>
 
