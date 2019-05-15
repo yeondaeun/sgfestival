@@ -3,7 +3,12 @@
 
 {%block content%}
 
-<img src="{% static 'booth/images/realwen.png' %}" style='width:100%;'>
+<div class="boothimg">
+    <img src="{% static 'booth/images/realwen.png' %}" style='width:100%; position: absolute; z-index: 1;'>
+    <a class="icon1" href="{%url 'tues_list'%}" style="position: absolute; right: 0; width: 70px; height: 50px; z-index: 10; margin-top: 20px;"></a>
+    <a class="icon2" href="{%url 'wednes_list'%}" style="position: absolute; right: 0; width: 70px; height: 50px; z-index: 10; margin-top: 70px;"></a>
+    <a class="icon3" href="{%url 'thurs_list'%}" style="position: absolute; right: 0; width: 70px; height: 50px; z-index: 10; margin-top: 110px;"></a>
+</div>
 
 {% for booth in booths %}
 
