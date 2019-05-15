@@ -12,6 +12,6 @@ class Booth(models.Model):
 
 class Photo(models.Model):
     booth = models.ForeignKey(Booth, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/', blank=True )
+    image = models.CharField(max_length=2000, default='', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

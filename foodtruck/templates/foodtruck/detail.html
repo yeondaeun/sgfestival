@@ -18,7 +18,7 @@
             </div>
             <div class='papermiddle'>   
                 {%if truck.truckphoto %}
-                <img src='{{ truck.truckphoto.url }}' style='width:90%; display:block; margin:0 auto;'>
+                <img src="{% static truck.truckphoto %}" style='width:90%; display:block; margin:0 auto;'>
                 {%endif%}
             </div>
             <div class='paperbottom' style='text-align:center;'>{{ truck.truckname }}</div>

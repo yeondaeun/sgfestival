@@ -23,7 +23,7 @@
             </div>
             <div class='papermiddle'>   
                 {% for photo in photos %}
-                    <img src="{{ photo.image.url}}" style='width:90%; display:block; margin:0 auto;'>
+                    <img src="{% static photo.image %}" style='width:90%; display:block; margin:0 auto;'>
                 {% endfor %}
             </div>
             <div class='paperbottom' style='text-align:center;'>{{ booth.name }}</div>
