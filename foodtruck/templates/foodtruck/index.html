@@ -9,7 +9,7 @@
     <!-- Button trigger modal -->
 
     <div class="banner" onclick="location.href='{% url 'detail' index=truck.pk %}'" style='display:flex; cursor: pointer;'>
-        <div class='b_number' style='background-color:#FA899A; color:white;'>{{truck.id}}</div>
+        <div class='b_number' style='background-color:#FA899A; color:white;'>{{forloop.counter}}</div>
         <div class='b_title'>
             <div class='top' style='display:flex; align-items: center;'>
                 <div class='top_title'>
